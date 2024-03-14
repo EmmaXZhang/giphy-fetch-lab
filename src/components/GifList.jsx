@@ -1,13 +1,14 @@
-export default function GiftList() {
+/* eslint-disable react/prop-types */
+export default function GiftList({ gif }) {
   return (
     <>
       <div className="card">
-        <img src="img_avatar.png" alt="Avatar" style="width:100%" />
+        <img src="{gif.images.original}" alt="gif" />
         <div className="container">
           <h4>
-            <b>John Doe</b>
+            <b>{gif.title}</b>
           </h4>
-          <p>Architect & Engineer</p>
+          <p>{gif.alt_text}</p>
         </div>
       </div>
     </>
