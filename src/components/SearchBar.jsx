@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import GifList from "./GifList";
 import { useState } from "react";
 import axios from "axios";
@@ -12,9 +11,10 @@ export default function SearchBar() {
     setSearchTerm(event.target.value);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+  //   function handleSubmit(event) {
+  //     event.preventDefault();
+  //     // console.log("handleSubmit", searchTerm);
+  //   }
 
   // useEffect will trigger whenever searchTerm changes
   useEffect(() => {
@@ -36,12 +36,9 @@ export default function SearchBar() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>Search Gifs</label>
-        <input type="text" value={searchTerm} onChange={handleChange} />
-        <button type="submit">Search</button>
-        <GifList gif={gif} />
-      </form>
+      <label>Search Gifs</label>
+      <input type="text" value={searchTerm} onChange={handleChange} />
+      <GifList gif={gif} />
     </>
   );
 }
